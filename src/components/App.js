@@ -1,5 +1,6 @@
 import React from 'react';
 import { CssBaseline, Drawer, AppBar, Toolbar, List, ListItem, ListItemText, Container, Typography, Paper, Grid } from '@mui/material';
+import myImg from '../images/my-img.jpg';
 import { styled } from '@mui/system';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -10,13 +11,47 @@ const StyledContainer = styled(Container)({
   padding: (theme) => theme.spacing(3),
 });
 
+const ImageContainer = styled(Grid)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+const TextContainer = styled(Grid)({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
 function Introduction() {
   return (
     <StyledContainer>
-      <Typography variant="h5">自己紹介</Typography>
-      <Typography paragraph>
-        ここに自己紹介の内容を書いてください。
+      <Typography variant="h5" mb={4} sx={{ fontWeight: 'bold' }}>
+        自己紹介
       </Typography>
+      <Grid container spacing={3}>
+        <TextContainer item xs={12} md={8}>
+          <Typography paragraph>
+            私はWeb開発者のJohn Doeです。専門はフロントエンド開発で、ReactやMaterial-UIを使ったプロジェクトが得意です。
+            過去5年間にわたり、多くのWebアプリケーションやウェブサイトの開発に関わってきました。
+            これまでに様々なスタートアップ企業や大手企業のプロジェクトでフロントエンドのリードエンジニアとして活躍し、
+            ユーザーエクスペリエンスの向上とビジネス目標の達成に貢献してきました。
+          </Typography>
+          <Typography paragraph>
+            また、過去1年間にわたり、担当したプロジェクトのユーザーエクスペリエンスを向上させるために、
+            サイトの読み込み速度を平均30%改善し、ユーザーアクションの変換率を平均20%向上させました。
+            これは、パフォーマンスの最適化やユーザーインターフェースの改善に焦点を当て、データに基づいた意思決定を行った結果です。
+          </Typography>
+          <Typography paragraph>
+            私の目標は、常に技術とデザインの最新トレンドを学び、それを実践することで、ユーザーが魅了されるプロダクトを提供することです。
+            チームと協力して、ビジョンを実現し、プロジェクトの成功に貢献することを楽しみにしています。
+          </Typography>
+        </TextContainer>
+        <ImageContainer item xs={12} md={4}>
+          <img src={myImg} alt="Your Name" style={{ width: '100%', height: 'auto', maxWidth: '500px', border: '2px solid #000' }} />
+        </ImageContainer>
+      </Grid>
     </StyledContainer>
   );
 }
@@ -24,7 +59,9 @@ function Introduction() {
 function Skill() {
   return (
     <StyledContainer>
-      <Typography variant="h5">スキル</Typography>
+      <Typography variant="h5" mb={4} sx={{ fontWeight: 'bold' }}>
+        スキル
+      </Typography>
       <Typography paragraph>
         ここにスキルの内容を書いてください。
       </Typography>
@@ -35,7 +72,7 @@ function Skill() {
 function Career() {
   return (
     <StyledContainer>
-      <Typography variant="h4" mb={4} sx={{ fontWeight: 'bold' }}>
+      <Typography variant="h5" mb={4} sx={{ fontWeight: 'bold' }}>
         キャリア
       </Typography>
 
